@@ -52,3 +52,67 @@ This folder will need to be created if it does not already exist.
 2. Open the package and follow the instructions to install
 
 
+### Linux
+
+The install instructions below are based on Linux Distributions using the **APT** package manager.
+
+1. Update the package manager
+
+```
+sudo apt update
+```
+
+2. Install dotnet 8
+
+```
+curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --channel 8.0
+
+echo 'export DOTNET_ROOT=$HOME/.dotnet' >> ~/.bashrc
+echo 'export PATH=$PATH:$HOME/.dotnet' >> ~/.bashrc
+source ~/.bashrc
+```
+
+3. Install Clang and Git
+
+```
+sudo apt install clang
+sudo apt install git
+```
+
+4. Download the required repositories from Github into the home directory.
+
+```
+cd ~/
+git clone https://github.com/openmediatransport/libvmx
+git clone https://github.com/openmediatransport/libomtnet
+git clone https://github.com/openmediatransport/omtplugin
+```
+5. Build libvmx 
+
+```
+cd ~/libvmx/build
+chmod 755 buildlinuxx64.sh
+./buildlinuxx64.sh
+```
+6. Build libomtnet 
+
+```
+cd ~/libomtnet/build
+chmod 755 buildall.sh
+./buildall.sh
+```
+
+7. Build omtplugin
+
+```
+cd ~/omtplugin/build
+chmod 755 buildlinuxx64.sh
+./buildlinuxx64.sh
+```
+
+8. Copy libraries into OBS plugins directory
+
+```
+sudo cp ~/omtplugin/bin/Release/net8.0/linux-x64/native/omtplugin.so /usr/lib/x86_64-linux-gnu/obs-plugins/
+sudo cp ~/libvmx/build/libvmx.so /usr/lib/x86_64-linux-gnu/obs-plugins/
+```
