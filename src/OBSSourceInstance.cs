@@ -1,4 +1,4 @@
-﻿/*
+/*
 * MIT License
 *
 * Copyright (c) 2025 Open Media Transport Contributors
@@ -38,6 +38,23 @@ namespace omtplugin
             instance = GCHandle.ToIntPtr(handle);
         }
         public virtual void UpdateSettings(IntPtr settings)
+        {
+        }
+
+        // [MODIFICATION OMT TALLY] Lifecycle callbacks invoked by libobs
+        public virtual void Activate()
+        {
+        }
+
+        public virtual void Deactivate()
+        {
+        }
+
+        public virtual void Show()
+        {
+        }
+
+        public virtual void Hide()
         {
         }
 
