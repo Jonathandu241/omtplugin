@@ -67,7 +67,7 @@ namespace omtplugin
             updateDelegate = new OBS.obs_function_update(Update);
             getDefaultsDelegate = new OBS.obs_function_get_defaults(GetDefaults);
 
-            // [MODIFICATION OMT TALLY] Instantiate lifecycle & tally delegates
+            //Instantiate lifecycle & tally delegates
             activateDelegate = new OBS.obs_function_source_event(Activate);
             deactivateDelegate = new OBS.obs_function_source_event(Deactivate);
             showDelegate = new OBS.obs_function_source_event(Show);
@@ -84,7 +84,7 @@ namespace omtplugin
             info.get_defaults = Marshal.GetFunctionPointerForDelegate(getDefaultsDelegate);
             info.update = Marshal.GetFunctionPointerForDelegate(updateDelegate);
 
-            // [MODIFICATION OMT TALLY] Register function pointers into obs_source_info struct
+            //Register function pointers into obs_source_info struct
             info.activate = Marshal.GetFunctionPointerForDelegate(activateDelegate);
             info.deactivate = Marshal.GetFunctionPointerForDelegate(deactivateDelegate);
             info.show = Marshal.GetFunctionPointerForDelegate(showDelegate);
@@ -190,7 +190,7 @@ namespace omtplugin
             }
             return IntPtr.Zero;
         }
-        // [MODIFICATION OMT TALLY] Lifecycle handlers invoked by OBS Studio
+        //Lifecycle handlers invoked by OBS Studio
         private void Activate(IntPtr data)
         {
             try
