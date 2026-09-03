@@ -270,7 +270,7 @@ namespace omtplugin
         public delegate void obs_fontend_event_cb(obs_frontend_event evt, IntPtr private_data);
         public delegate void obs_frontend_cb(IntPtr private_data);
 
-        // [MODIFICATION OMT TALLY] Delegate for source lifecycle callbacks (activate, deactivate, show, hide)
+        //Delegate for source lifecycle callbacks (activate, deactivate, show, hide)
         public delegate void obs_function_source_event(IntPtr data);
 
         //MAX_AV_PLANES = 8
@@ -523,12 +523,12 @@ namespace omtplugin
         [DllImport(DLL_PATH)]
         public static extern void obs_source_output_audio(IntPtr source, ref obs_source_audio audio);
 
-        // [MODIFICATION OMT TALLY] Query source visibility (Preview / Showing state)
+        //Query source visibility (Preview / Showing state)
         [DllImport(DLL_PATH, CallingConvention = CallingConvention.Cdecl)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool obs_source_showing(IntPtr source);
 
-        // [MODIFICATION OMT TALLY] Query source active state (Program / On-Air state)
+        //Query source active state (Program / On-Air state)
         [DllImport(DLL_PATH, CallingConvention = CallingConvention.Cdecl)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool obs_source_active(IntPtr source);
