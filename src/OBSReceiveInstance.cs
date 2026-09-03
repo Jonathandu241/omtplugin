@@ -174,7 +174,6 @@ namespace omtplugin
         }
 
         /// <summary>
-        /// [MODIFICATION OMT TALLY]
         /// Queries the current OBS state for this source:
         /// - Program (Red): obs_source_active(source) is true (the source is active in Program output).
         /// - Preview (Green): obs_source_showing(source) is true while not active in Program (e.g. In Studio Mode Preview).
