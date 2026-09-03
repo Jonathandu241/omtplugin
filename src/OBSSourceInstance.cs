@@ -41,7 +41,6 @@ namespace omtplugin
         {
         }
 
-        // [MODIFICATION OMT TALLY] Lifecycle callbacks invoked by libobs
         public virtual void Activate()
         {
         }
